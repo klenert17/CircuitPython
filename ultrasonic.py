@@ -21,7 +21,7 @@ while True:
      distance = sonar.distance
     except RuntimeError:
         print("Retrying!")
-    if distance < 5:
+    if distance < 5: #Makes neopixel red when it senses something within 5 cm
         r = 225
         g = 0
         b = 0
@@ -29,17 +29,17 @@ while True:
         g = int(g)
         b = int(b)
         print(">5")
-    elif distance > 5 and distance < 20:
+    elif distance > 5 and distance < 20: #Makes neopixel purple to blue when it senses something within 5 and 20 cm
         r = int(simpleio.map_range(distance, 5, 20, 225, 0))
         g = int(0)
         b = int(simpleio.map_range(distance, 5, 20, 0, 225))
         print("5-20")
-    elif distance > 20 and distance < 35:
+    elif distance > 20 and distance < 35: #Makes neopixel blue to green when it senses something within 20 and 35 cm
         r = int(0)
         g = int(simpleio.map_range(distance, 20, 35, 0, 225))
         b = int(simpleio.map_range(distance, 20, 35, 225, 0))
         print("<20")
-    elif distance > 35:
+    elif distance > 35: #Makes neopixel green
         r = 0
         g = 225
         b = 0
