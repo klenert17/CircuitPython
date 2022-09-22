@@ -1,6 +1,6 @@
 # Kathryn Lenert
 # Ultrasonic Sensor color changer
-# This code makes the light turn colors
+# This code makes the light turn colors based on distance
 
 import board
 import neopixel 
