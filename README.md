@@ -198,11 +198,12 @@ while True:
 
 ### Evidence
 
-![image](https://user-images.githubusercontent.com/71406905/193124068-461c3046-cc5f-407f-9ed7-d9241c10ed8f.png)
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/71406905/193125561-e706b7ef-b1ee-4d80-be82-5ffd5c3c839d.gif)
 
 ### Wiring
+
+![image](https://user-images.githubusercontent.com/71406905/193124068-461c3046-cc5f-407f-9ed7-d9241c10ed8f.png)
 
 ### Reflection
 
