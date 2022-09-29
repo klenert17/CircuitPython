@@ -12,12 +12,25 @@ This repository will actually serve as a aid to help you get started with your o
 ## Hello_CircuitPython
 
 ### Description & Code
-Description goes here
+This code makes the Neopixel on the Metro Board change colors
 
 Here's how you make code look like code:
 
 ```python
-Code goes here
+# Kathryn Lenert
+# Hello Circuit Python
+# This code makes the light turn colors
+
+import board
+import neopixel
+
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
+dot.brightness = 0.2
+
+print("Make it aqua!")
+
+while True:
+    dot.fill((255, 0, 255)) 
 
 ```
 
@@ -67,7 +80,7 @@ Pictures / Gifs of your work should go here.  You need to communicate what your 
 ## Distance_Sensor
 
 ### Description & Code
-For this assignment we were required to use the HC-SR04 sensor to measure the distance from an object, depending on the distance the LED would change colors going through the colors from red to green to blue. 
+For this assignment we were required to use the HC-SR04 ultrasonic sensor to measure the distance from an object, depending on the distance, 5-35 cm, the LED would change colors going through the colors from red to green to blue. 
 
 ```
 # Kathryn Lenert
@@ -135,6 +148,7 @@ while True:
 ## CircuitPython_LCD
 
 ### Description & Code
+This code makes a LCD screen display numbers going up or down by pushing a button depending on whether the switch is up or not.
 
 ```python
 # Kathryn Lenert
