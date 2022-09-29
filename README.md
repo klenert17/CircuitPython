@@ -60,6 +60,71 @@ Pictures / Gifs of your work should go here.  You need to communicate what your 
 
 ### Reflection
 
+## CircuitPython_DistanceSensor
+
+### Description & Code
+For this assignment we were required to use the HC-SR04 sensor to measure the distance from an object, depending on the distance the LED would change colors going through the colors from red to green to blue. 
+
+```
+# Kathryn Lenert
+# Ultrasonic Sensor color changer
+# This code makes the light turn colors based on distance
+
+import board
+import neopixel 
+import time
+import board
+import adafruit_hcsr04
+import simpleio
+
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D6)
+
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
+dot.brightness = 0.1
+
+
+while True:
+    try: 
+     print((sonar.distance,))
+     distance = sonar.distance
+    except RuntimeError:
+        print("Retrying!")
+    if distance < 5: #Makes neopixel red when it senses something within 5 cm
+        r = 225
+        g = 0
+        b = 0
+        r = int(r)
+        g = int(g)
+        b = int(b)
+        print(">5")
+    elif distance > 5 and distance < 20: #Makes neopixel purple to blue when it senses something within 5 and 20 cm
+        r = int(simpleio.map_range(distance, 5, 20, 225, 0))
+        g = int(0)
+        b = int(simpleio.map_range(distance, 5, 20, 0, 225))
+        print("5-20")
+    elif distance > 20 and distance < 35: #Makes neopixel blue to green when it senses something within 20 and 35 cm
+        r = int(0)
+        g = int(simpleio.map_range(distance, 20, 35, 0, 225))
+        b = int(simpleio.map_range(distance, 20, 35, 225, 0))
+        print("<20")
+    elif distance > 35: #Makes neopixel green
+        r = 0
+        g = 225
+        b = 0
+        print("<35")
+
+
+    dot.fill((r, g, b))
+    time.sleep (0.05)
+```
+
+## Evidence
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/71406905/193126632-d0500b6e-6a94-46f8-b8e3-bedee702d727.gif)
+
+
+### Wiring
+![Screenshot (3)](https://user-images.githubusercontent.com/71406903/192614570-c0fe8ff7-9f1b-4d20-8237-f645cfd45fa3.png)
+### Reflection
 
 
 
