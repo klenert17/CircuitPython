@@ -4,7 +4,7 @@ This repository will actually serve as a aid to help you get started with your o
 * [Table of Contents](#TableOfContents)
 * [Hello_CircuitPython](#Hello_CircuitPython)
 * [CircuitPython_Servo](#CircuitPython_Servo)
-* [Distance Sensor](#Distance_Sensor)
+* [Distance_Sensor](#Distance_Sensor)
 * [CircuitPython_LCD](#CircuitPython_LCD)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
@@ -61,7 +61,10 @@ Pictures / Gifs of your work should go here.  You need to communicate what your 
 
 ### Reflection
 
-## CircuitPython_DistanceSensor
+
+
+
+## Distance_Sensor
 
 ### Description & Code
 For this assignment we were required to use the HC-SR04 sensor to measure the distance from an object, depending on the distance the LED would change colors going through the colors from red to green to blue. 
