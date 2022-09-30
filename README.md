@@ -60,6 +60,7 @@ What went wrong / was challenging, how'd you figure it out, and what did you lea
 ## CircuitPython_Servo
 
 ### Description & Code
+This assignment was to control a 180 degree servo with two buttons, controling which direction it turns.
 
 ```python
 # Kathryn Lenert
