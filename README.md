@@ -1,28 +1,241 @@
-# CPyProjectTemplate
-Put a description for your project here!
-This repo is a template VS code project for CircuitPython projects that automatically uploads your code to the board when you press F5. Requires F5Anything extension.
-## Use
-### Every new project:
-1. Make a GitHub account if you don't have one with your normal school credentials and sign into it.
-2. Click the big green Use This Template button at the top of this page.
-3. Name the new repository something appropriate to the purpose of your project (Your first one should probably be named `CircuitPython`).
-4. Hit "Create repository from template." (The default settings should be fine.)
-5. Open VS Code on your machine. Click Clone Repository.
-6. Paste in the link to the new repository you've just created from the template and hit enter.
-7. For the location, select the "STUDENT" drive if you have it or the document folder if you don't.
-8. Hit "Open Cloned Directory."
-9. Install the reccomended extensions when you get that popup in the lower right corner.
-### To commit from VS Code:
-1. Go to the little branch icon in the left bar of VS Code.
-2. Click the + icon next  to the files you want to commit.
-3. Write a message that descibes your changes in the "Message" box and hit commit.
-4. If you get an error about user.name and user.email, see the next section.
-5. Click the "Sync changes" button.
-### If you get an error about user.name and user.email
-1. In VS Code, hit `` Ctrl+Shift+` ``
-2. Filling in your actual information, run the following commands one line at a time. The paste shortcut is `Ctrl+V` or you can right click then hit paste. Spelling must match exactly:
+# CircuitPython
+This repository will actually serve as a aid to help you get started with your own template.  You should copy the raw form of this readme into your own, and use this template to write your own.  If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
+## Table of Contents
+* [Table of Contents](#TableOfContents)
+* [Hello_CircuitPython](#Hello_CircuitPython)
+* [CircuitPython_Servo](#CircuitPython_Servo)
+* [Distance_Sensor](#Distance_Sensor)
+* [CircuitPython_LCD](#CircuitPython_LCD)
+* [NextAssignmentGoesHere](#NextAssignment)
+---
+
+## Hello_CircuitPython
+
+### Description & Code
+This code makes the Neopixel on the Metro Board change colors
+
+Here's how you make code look like code:
+
+```python
+# Kathryn Lenert
+# Hello Circuit Python
+# This code makes the light turn colors
+
+import board
+import neopixel
+
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
+dot.brightness = 0.2
+
+print("Make it aqua!")
+
+while True:
+    dot.fill((255, 0, 255)) 
+
 ```
-git config --global user.name YOURUSERNAME
-git config --global user.email YOURSCHOOLEMAIL
+
+
+### Evidence
+
+
+![spinningMetro_Optimized](https://user-images.githubusercontent.com/54641488/192549584-18285130-2e3b-4631-8005-0792c2942f73.gif)
+
+
+And here is how you should give image credit to someone, if you use their work:
+
+Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlybrkr=8931d0bc)
+
+
+
+### Wiring
+Make an account with your google ID at [tinkercad.com](https://www.tinkercad.com/learn/circuits), and use "TinkerCad Circuits to make a wiring diagram."  It's really easy!  
+Then post an image here.   [here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
+
+### Reflection
+What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience?  Your ultimate goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person.
+
+
+
+
+## CircuitPython_Servo
+
+### Description & Code
+
+```python
+Code goes here
+
 ```
-3. Return to step 3 of the previous section.
+
+### Evidence
+
+Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
+
+### Wiring
+
+### Reflection
+
+
+
+
+## Distance_Sensor
+
+### Description & Code
+For this assignment we were required to use the HC-SR04 ultrasonic sensor to measure the distance from an object, depending on the distance, 5-35 cm, the LED would change colors going through the colors from red to green to blue. 
+
+```
+# Kathryn Lenert
+# Ultrasonic Sensor color changer
+# This code makes the light turn colors based on distance
+
+import board
+import neopixel 
+import time
+import board
+import adafruit_hcsr04
+import simpleio
+
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D6)
+
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
+dot.brightness = 0.1
+
+
+while True:
+    try: 
+     print((sonar.distance,))
+     distance = sonar.distance
+    except RuntimeError:
+        print("Retrying!")
+    if distance < 5: #Makes neopixel red when it senses something within 5 cm
+        r = 225
+        g = 0
+        b = 0
+        r = int(r)
+        g = int(g)
+        b = int(b)
+        print(">5")
+    elif distance > 5 and distance < 20: #Makes neopixel purple to blue when it senses something within 5 and 20 cm
+        r = int(simpleio.map_range(distance, 5, 20, 225, 0))
+        g = int(0)
+        b = int(simpleio.map_range(distance, 5, 20, 0, 225))
+        print("5-20")
+    elif distance > 20 and distance < 35: #Makes neopixel blue to green when it senses something within 20 and 35 cm
+        r = int(0)
+        g = int(simpleio.map_range(distance, 20, 35, 0, 225))
+        b = int(simpleio.map_range(distance, 20, 35, 225, 0))
+        print("<20")
+    elif distance > 35: #Makes neopixel green
+        r = 0
+        g = 225
+        b = 0
+        print("<35")
+
+
+    dot.fill((r, g, b))
+    time.sleep (0.05)
+```
+
+## Evidence
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/71406905/193126632-d0500b6e-6a94-46f8-b8e3-bedee702d727.gif)
+
+
+### Wiring
+![Screenshot (3)](https://user-images.githubusercontent.com/71406903/192614570-c0fe8ff7-9f1b-4d20-8237-f645cfd45fa3.png)
+### Reflection
+
+
+
+## CircuitPython_LCD
+
+### Description & Code
+This code makes a LCD screen display numbers going up or down by pushing a button depending on whether the switch is up or not.
+
+```python
+# Kathryn Lenert
+# LCD Button Python
+# This code counts the time the button is pressed and shows whether its up or down
+
+import board
+import time
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+from digitalio import DigitalInOut, Direction, Pull
+
+# get and i2c object
+i2c = board.I2C()
+btn = DigitalInOut(board.D2)
+btn2 = DigitalInOut(board.D7)
+btn.direction = Direction.INPUT
+btn.pull = Pull.UP
+btn2.direction = Direction.INPUT
+btn2.pull = Pull.UP
+# some LCDs are 0x3f... some are 0x27.
+lcd = LCD(I2CPCF8574Interface(i2c, 0x3f), num_rows=2, num_cols=16)
+cur_state = True
+prev_state = True
+cur_state2 = True
+prev_state2 = True
+buttonPress = 0
+
+while True:
+    while btn2.value == False:
+        cur_state = btn.value
+        if cur_state != prev_state:
+            if not cur_state:
+                buttonPress = buttonPress + 1
+                lcd.clear()
+                lcd.set_cursor_pos(0,0)
+                lcd.print(str(buttonPress))
+                time.sleep(0.005)
+            else:
+                lcd.clear()
+                lcd.set_cursor_pos(0,0)
+                lcd.print(str(buttonPress))
+        prev_state = cur_state
+    else:
+        cur_state2 = btn.value
+        if cur_state2 != prev_state2:
+            if not cur_state2:
+                buttonPress = buttonPress - 1
+                lcd.clear()
+                lcd.set_cursor_pos(0,0)
+                lcd.print(str(buttonPress))
+                time.sleep(0.005)
+
+            else:
+                lcd.clear()
+                lcd.set_cursor_pos(0,0)
+                lcd.print(str(buttonPress))
+        prev_state2 = cur_state2
+
+```
+
+### Evidence
+
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/71406905/193125561-e706b7ef-b1ee-4d80-be82-5ffd5c3c839d.gif)
+
+### Wiring
+
+![image](https://user-images.githubusercontent.com/71406905/193124068-461c3046-cc5f-407f-9ed7-d9241c10ed8f.png)
+
+### Reflection
+
+
+
+
+
+## NextAssignment
+
+### Description & Code
+
+```python
+Code goes here
+
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
