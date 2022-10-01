@@ -117,7 +117,7 @@ Image credit goes to [Dylan Halbert](https://github.com/dhalber11/CircuitPython)
 
 ### Reflection
 
-
+This was my frsit ever assignment with coding parts with Python. Innitially, I added resistors to the breadboard but those aren't needed with this type of board. This assignment was mostly challanging because of the code, but otherwise it went smoothly.
 
 
 ## Distance_Sensor
