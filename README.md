@@ -38,7 +38,6 @@ while True:
 ### Evidence
 
 
-![spinningMetro_Optimized](https://user-images.githubusercontent.com/54641488/192549584-18285130-2e3b-4631-8005-0792c2942f73.gif)
 
 
 And here is how you should give image credit to someone, if you use their work:
@@ -52,8 +51,7 @@ Make an account with your google ID at [tinkercad.com](https://www.tinkercad.com
 Then post an image here.   [here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
 
 ### Reflection
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience?  Your ultimate goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person.
-
+This was my very first time working with Python, and it was a pretty big shift. One of my biggest problems I found was realizing that indentation matters a whole lot. This took a little while for me to understant because all my lines of code were red until I realized. 
 
 
 
@@ -184,8 +182,9 @@ while True:
 
 ### Wiring
 ![Screenshot (3)](https://user-images.githubusercontent.com/71406903/192614570-c0fe8ff7-9f1b-4d20-8237-f645cfd45fa3.png)
-### Reflection
 
+### Reflection
+This assignment was pretty difficult because it was a combination of both previous codes with a lot of new things I had to learn and download. The hard part was getting the first distance and color written, but after with was just the same thing, just ajustments on the colors.
 
 
 ## CircuitPython_LCD
