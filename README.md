@@ -263,7 +263,7 @@ while True:
 
 ### Reflection
 
-
+This assignment was relativly simple because it was a combination of pervious assignments, just a few extra lines of code for the second button. Initally, the second button didn't change the numbers at all, but that was due to the wiring being incorrect, so be sure to follow the immage exactly.
 
 
 
