@@ -37,18 +37,12 @@ while True:
 
 ### Evidence
 
-
-
-
-And here is how you should give image credit to someone, if you use their work:
-
-Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlybrkr=8931d0bc)
+![IMG_9229](https://user-images.githubusercontent.com/71406905/197607446-4faf477a-6805-4b23-a978-288fef8ab14e.jpg)
 
 
 
 ### Wiring
-Make an account with your google ID at [tinkercad.com](https://www.tinkercad.com/learn/circuits), and use "TinkerCad Circuits to make a wiring diagram."  It's really easy!  
-Then post an image here.   [here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
+There is no wireing for this assignment.
 
 ### Reflection
 This was my very first time working with Python, and it was a pretty big shift. One of my biggest problems I found was realizing that indentation matters a whole lot. This took a little while for me to understant because all my lines of code were red until I realized. 
