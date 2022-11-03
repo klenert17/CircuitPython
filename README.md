@@ -258,6 +258,40 @@ while True:
 This assignment was relativly simple because it was a combination of pervious assignments, just a few extra lines of code for the second button. Initally, the second button didn't change the numbers at all, but that was due to the wiring being incorrect, so be sure to follow the immage exactly.
 
 
+## Motor Control 
+For this assignment we had to make a DC motor rotate at a speed that can increase and decreased based on the position of a potentiometer.
+
+### Description & Code
+
+```python
+import time
+from time import sleep
+import board
+import simpleio
+from analogio import AnalogIn 
+import pwmio  
+
+analog_in = AnalogIn(board.A1) #potentionmeter pin
+pin_out = pwmio.PWMOut(board.D8,duty_cycle=65535,frequency=5000)
+
+while True:
+
+  sensor_value = analog_in.value
+  # Map the sensor's range from 0<=sensor_value<=255 to 0<=sensor_value<=1023
+  mapped_value = int(simpleio.map_range(sensor_value, 0, 65535, 0, 255))
+  
+  pin_out.duty_cycle = sensor_value
+  print("mapped sensor value: ", sensor_value)
+  time.sleep(0.1)
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
+This was the first time I had done this assinment in Circuit Python, as I had done it last year in arduino.cc. The wireing was the same as the other assignement, however the code was in a new format. All I had to do was switch the code into python using resources online, other python assignment, and class mates. 
+
 
 ## NextAssignment
 
