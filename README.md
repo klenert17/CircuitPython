@@ -272,7 +272,7 @@ from analogio import AnalogIn
 import pwmio  
 
 analog_in = AnalogIn(board.A1) #potentionmeter pin
-pin_out = pwmio.PWMOut(board.D8,duty_cycle=65535,frequency=5000)
+pin_out = pwmio.PWMOut(board.D9,duty_cycle=65535,frequency=5000)
 
 while True:
 
