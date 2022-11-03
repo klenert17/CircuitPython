@@ -287,7 +287,11 @@ while True:
 
 ### Evidence
 
+
 ### Wiring
+
+![Screenshot (17)](https://user-images.githubusercontent.com/71406905/199815893-909e71f3-98e2-4080-8c45-a9048be0dce9.png)
+
 
 ### Reflection
 This was the first time I had done this assinment in Circuit Python, as I had done it last year in arduino.cc. The wireing was the same as the other assignement, however the code was in a new format. All I had to do was switch the code into python using resources online, other python assignment, and class mates. 
