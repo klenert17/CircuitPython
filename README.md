@@ -6,6 +6,7 @@
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [Distance_Sensor](#Distance_Sensor)
 * [CircuitPython_LCD](#CircuitPython_LCD)
+* [Motor_Control](#Motor_Control)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
