@@ -348,6 +348,8 @@ while True:
 
 ### Wiring
 
+(![Screenshot (18)](https://user-images.githubusercontent.com/71406905/225112516-c39c93a7-0966-4113-bf81-c19124852927.png))
+
 ### Reflection
 This assignment was really hard because I haven't done code in quite some time. I also had to learn how to use the new tempature sensor and re-teach myself how to code an LCD screen. A big lep from the code came from [River L's](https://github.com/rivques/CircuitPython/blob/master/tmp36.py) code. I did have to switch up which tryp of LCD screen I used and some of the wireing, but overall it works well.
 
