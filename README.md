@@ -7,6 +7,7 @@
 * [Distance_Sensor](#Distance_Sensor)
 * [CircuitPython_LCD](#CircuitPython_LCD)
 * [Motor_Control](#Motor_Control)
+* [Temp sensor LCD screen](#Temp_sensor_LCD_screen)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
