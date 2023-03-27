@@ -356,6 +356,87 @@ while True:
 ### Reflection
 This assignment was really hard because I haven't done code in quite some time. I also had to learn how to use the new tempature sensor and re-teach myself how to code an LCD screen. A big help for the code came from [River L's](https://github.com/rivques/CircuitPython/blob/master/tmp36.py) code. I did have to switch up which type of LCD screen I used and some of the wiring, but overall it works well.
 
+## Roatry Encoder
+
+### Description & Code
+
+For this assignment I had to make a stop light that was controlled my a roatary encoder and display "go" "slow" and "stop" depending on the position of the rotary encoder. The LED lights were also indicating to "go" "slow" and "stop".
+
+```python
+import time
+import rotaryio
+import board
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+from digitalio import DigitalInOut, Direction, Pull
+
+encoder = rotaryio.IncrementalEncoder(board.D3, board.D2)
+last_position = 0
+btn = DigitalInOut(board.D1)
+btn.direction = Direction.INPUT
+btn.pull = Pull.UP
+state = 0
+Button = 1
+i2c = board.I2C()
+lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
+
+ledGreen = DigitalInOut(board.D8)
+ledYellow = DigitalInOut(board.D9)
+ledRed = DigitalInOut(board.D10)
+ledGreen.direction = Direction.OUTPUT
+ledYellow.direction = Direction.OUTPUT
+ledRed.direction = Direction.OUTPUT
+
+while True:
+    position = encoder.position
+    if position != last_position:
+        if position > last_position:
+            state = state + 1
+        elif position < last_position:
+            state = state - 1
+        if state > 2:
+            state = 2
+        if state < 0:
+            state = 0
+        print(state)
+        if state == 0: 
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("go")
+        elif state == 1:
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("slow")
+        elif state == 2:
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("stop")
+    if btn.value == 0 and Button == 1:
+        print("button")
+        if state == 0: 
+                ledGreen.value = True
+                ledRed.value = False
+                ledYellow.value = False
+        elif state == 1:
+                ledYellow.value = True
+                ledRed.value = False
+                ledGreen.value = False
+        elif state == 2:
+                ledRed.value = True
+                ledGreen.value = False
+                ledYellow.value = False
+        Button = 0
+    if btn.value == 1:
+        time.sleep(.1)
+        Button = 1
+    last_position = position
+
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
+This assignment was pretty stright forward, with the main issue being that VS code was down. This was also my first time working with a rotary encoder but after a few google searches and help from [Nick](https://github.com/nbednar2929/CircuitPython) and [Joshua's](https://github.com/jbleakl36/CircuitPython) repositories, it wasn't too dificult.
+
 ## Next Assignment
 
 ### Description & Code
