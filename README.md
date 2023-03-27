@@ -8,7 +8,7 @@
 * [CircuitPython_LCD](#CircuitPython_LCD)
 * [Motor_Control](#Motor_Control)
 * [Temp sensor LCD screen](#Temp_sensor_LCD_screen)
-* [Roatry Encoder](#Roatry_Encoder)
+* [Rotary Encoder](#Rotary_Encoder)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
@@ -357,11 +357,11 @@ while True:
 ### Reflection
 This assignment was really hard because I haven't done code in quite some time. I also had to learn how to use the new tempature sensor and re-teach myself how to code an LCD screen. A big help for the code came from [River L's](https://github.com/rivques/CircuitPython/blob/master/tmp36.py) code. I did have to switch up which type of LCD screen I used and some of the wiring, but overall it works well.
 
-## Roatry Encoder
+## Rotary Encoder
 
 ### Description & Code
 
-For this assignment I had to make a stop light that was controlled my a roatary encoder and display "go" "slow" and "stop" depending on the position of the rotary encoder. The LED lights were also indicating to "go" "slow" and "stop".
+For this assignment I had to make a stop light that was controlled my a rotary encoder and display "go" "slow" and "stop" depending on the position of the rotary encoder. The LED lights were also indicating to "go" "slow" and "stop".
 
 ```python
 import time
