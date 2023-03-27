@@ -371,22 +371,28 @@ from lcd.lcd import LCD
 from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
 from digitalio import DigitalInOut, Direction, Pull
 
+
 encoder = rotaryio.IncrementalEncoder(board.D3, board.D2)
 last_position = 0
-btn = DigitalInOut(board.D1)
+last_position = 0
+btn = DigitalInOut(board.D4)
 btn.direction = Direction.INPUT
 btn.pull = Pull.UP
 state = 0
-Button = 1
-i2c = board.I2C()
-lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
+Buttonyep = 1
 
-ledGreen = DigitalInOut(board.D8)
-ledYellow = DigitalInOut(board.D9)
-ledRed = DigitalInOut(board.D10)
+
+i2c = board.I2C()
+lcd = LCD(I2CPCF8574Interface(i2c, 0x3f), num_rows=2, num_cols=16)
+
+
+ledGreen = DigitalInOut(board.D8) #greenled is in pin 8
+ledYellow = DigitalInOut(board.D9) #yellowled is in pin 9
+ledRed = DigitalInOut(board.D10) #redled is in pin 10
 ledGreen.direction = Direction.OUTPUT
 ledYellow.direction = Direction.OUTPUT
 ledRed.direction = Direction.OUTPUT
+
 
 while True:
     position = encoder.position
@@ -395,38 +401,35 @@ while True:
             state = state + 1
         elif position < last_position:
             state = state - 1
-        if state > 2:
+        if state > 2: #the led will be red
             state = 2
-        if state < 0:
+        if state < 0: #the led will be green
             state = 0
         print(state)
-        if state == 0: 
+        if state == 0: #if the led is green the lcd will print go
+            lcd.clear()
             lcd.set_cursor_pos(0, 0)
-            lcd.print("go")
-        elif state == 1:
+            lcd.print("Go")
+            ledGreen.value = True
+            ledRed.value = False
+            ledYellow.value = False
+        elif state == 1: #if the led is yellow the lcd will print caution
+            lcd.clear()
             lcd.set_cursor_pos(0, 0)
-            lcd.print("slow")
-        elif state == 2:
+            lcd.print("Caution")
+            ledYellow.value = True
+            ledRed.value = False
+            ledGreen.value = False
+        elif state == 2:  #if the led is red the lcd will print stop
+            lcd.clear()
             lcd.set_cursor_pos(0, 0)
-            lcd.print("stop")
-    if btn.value == 0 and Button == 1:
-        print("button")
-        if state == 0: 
-                ledGreen.value = True
-                ledRed.value = False
-                ledYellow.value = False
-        elif state == 1:
-                ledYellow.value = True
-                ledRed.value = False
-                ledGreen.value = False
-        elif state == 2:
-                ledRed.value = True
-                ledGreen.value = False
-                ledYellow.value = False
-        Button = 0
+            lcd.print("Stop")
+            ledRed.value = True
+            ledGreen.value = False
+            ledYellow.value = False
     if btn.value == 1:
         time.sleep(.1)
-        Button = 1
+        Buttonyep = 1
     last_position = position
 
 ```
