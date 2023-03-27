@@ -8,6 +8,7 @@
 * [CircuitPython_LCD](#CircuitPython_LCD)
 * [Motor_Control](#Motor_Control)
 * [Temp sensor LCD screen](#Temp_sensor_LCD_screen)
+* [Roatry Encoder](#Roatry_Encoder)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
@@ -435,7 +436,7 @@ while True:
 ### Wiring
 
 ### Reflection
-This assignment was pretty stright forward, with the main issue being that VS code was down. This was also my first time working with a rotary encoder but after a few google searches and help from [Nick](https://github.com/nbednar2929/CircuitPython) and [Joshua's](https://github.com/jbleakl36/CircuitPython) repositories, it wasn't too dificult.
+This assignment was pretty stright forward, with the main issue being that VS code was down. This was also my first time working with a rotary encoder but after a few google searches and help from [Nick](https://github.com/nbednar2929/CircuitPython) and [Joshua's](https://github.com/jbleakl36/CircuitPython) repositories, it wasn't too difficult.
 
 ## Next Assignment
 
