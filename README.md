@@ -489,7 +489,12 @@ while True:
 
 ### Wiring
 
+![image](https://user-images.githubusercontent.com/71406905/228939472-3f37eb47-b417-4d66-bcc3-131b126899c6.png)
+Wiring credit goes to [Sahana](https://github.com/sgupta70/CircuitPython)
+
 ### Reflection
+
+This assignment was pretty easy because the only new part was working in python rather than arduino. I had used all the parts before and the photointerrupter coded just like a ragular button.
 
 ## Next Assignment
 
