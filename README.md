@@ -436,7 +436,12 @@ while True:
 
 ### Evidence
 
+![image](https://user-images.githubusercontent.com/71406905/228940002-c5e3fb14-c3b2-4baf-9dbd-b4c68c7a096d.png)
+
 ### Wiring
+
+![image](https://user-images.githubusercontent.com/71406905/228939912-7c405595-a363-44ba-8de8-16ea33821622.png)
+Wiring and evidence credit goes to [Sahana](https://github.com/sgupta70/CircuitPython)
 
 ### Reflection
 This assignment was pretty stright forward, with the main issue being that VS code was down. This was also my first time working with a rotary encoder but after a few google searches and help from [Nick](https://github.com/nbednar2929/CircuitPython) and [Joshua's](https://github.com/jbleakl36/CircuitPython) repositories, it wasn't too difficult.
