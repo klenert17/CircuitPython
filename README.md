@@ -441,6 +441,56 @@ while True:
 ### Reflection
 This assignment was pretty stright forward, with the main issue being that VS code was down. This was also my first time working with a rotary encoder but after a few google searches and help from [Nick](https://github.com/nbednar2929/CircuitPython) and [Joshua's](https://github.com/jbleakl36/CircuitPython) repositories, it wasn't too difficult.
 
+## Photointerrupter
+
+### Description & Code
+
+For this assignment, we were assigned to count the amount of times a photointerrupted is interrupted during a four second window. The LCD will display the amount of times it was interrupted before resetting every 4 seconds.
+
+```python
+
+import board
+import time
+import digitalio
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+from digitalio import DigitalInOut, Direction, Pull
+
+i2c = board.I2C()
+btn = DigitalInOut(board.D8)
+btn.direction = Direction.INPUT
+btn.pull = Pull.UP
+
+# some LCDs are 0x3f... some are 0x27.
+lcd = LCD(I2CPCF8574Interface(i2c, 0x3f), num_rows=2, num_cols=16)
+cur_state = True
+prev_state = True
+buttonPress = -1
+now = time.monotonic()  # Time in seconds since power on
+
+
+while True: 
+    if (now + 4) < time.monotonic():
+        print ("times up " + str(now) + " " + str(buttonPress))
+        now = time.monotonic()
+        buttonPress = 0
+    
+    cur_state = btn.value
+    if cur_state != prev_state:
+        if not cur_state:
+            buttonPress = buttonPress + 1
+            lcd.clear()
+            lcd.set_cursor_pos(0,0)
+            lcd.print("The number of interrupts is: " + str(buttonPress))
+    prev_state = cur_state
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
+
 ## Next Assignment
 
 ### Description & Code
