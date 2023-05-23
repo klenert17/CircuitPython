@@ -501,7 +501,7 @@ Wiring credit goes to [Sahana](https://github.com/sgupta70/CircuitPython)
 
 ### Reflection
 
-This assignment was pretty easy because the only new part was working in python rather than arduino. I had used all the parts before and the photointerrupter coded just like a ragular button.
+This assignment was pretty easy because the only new part was working in python rather than arduino. I had used all the parts before and the photointerrupter coded just like a regular button. While I had used all of these parts before, the code was still new to me, but due to learning how to translate the code from auruino to python with the previous assignment. Another difficulty was figuring out how to code a LCD screen with python, but there were plenty of examples online which made it very easy to figure out. Once these difficulties were figured out, the assignment went smoothly. 
 
 ## Next Assignment
 
